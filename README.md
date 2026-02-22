@@ -137,14 +137,8 @@ Farmer Input → AI Processing (ML Models + APIs) → Personalized Recommendatio
 | Milind Panda | 24CSE097 | 4th Sem, CSE |
 | Jashobanta Sasmal | 24CSE070 | 4th Sem, CSE |
 
-> Built for **HackNovation 2.0** — R&D Cell, GIET University, Gunupur
+ Built for **HackNovation 2.0** — R&D Cell, GIET University, Gunupur
 
----
 
-## 📄 License
-
-This project is currently under development. License details will be added upon public release.
-
----
 
 *Made with ❤️ for India's farmers*
