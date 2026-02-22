@@ -118,14 +118,184 @@ Farmer Input → AI Processing (ML Models + APIs) → Personalized Recommendatio
 
 ## 🛣️ Roadmap
 
--  Crop prediction ML model
--  Disease detection CNN model (99%+ accuracy)
--  Multilingual AI chatbot (Hindi, Odia, Telugu)
--  7-day personalized farm plan generator
--  Smart Farm Calendar & Agri Calculator
--  Weather API integration
--  Market price data integration
+- [x] Crop prediction ML model
+- [x] Disease detection CNN model (99%+ accuracy)
+- [x] Multilingual AI chatbot (Hindi, Odia, Telugu)
+- [x] 7-day personalized farm plan generator
+- [x] Smart Farm Calendar & Agri Calculator
+- [x] Weather API integration
+- [x] Market price data integration
+- [ ] Drone & satellite field analysis integration
+- [ ] Real-time IoT sensor data processing
+- [ ] Government scheme & subsidy alert integration
+- [ ] Offline mode for rural connectivity
 
+---
+
+## 🚀 Getting Started
+
+Follow these steps to clone, set up, and run Agri Mitra locally on your machine.
+
+### ✅ Prerequisites
+
+Make sure you have the following installed before you begin:
+
+- [Python 3.9+](https://www.python.org/downloads/)
+- [Git](https://git-scm.com/)
+- `pip` (comes with Python)
+
+You can verify your installations by running:
+
+```bash
+python --version
+pip --version
+git --version
+```
+
+---
+
+### 📥 Step 1 – Clone the Repository
+
+```bash
+git clone https://github.com/your-username/agri-mitra.git
+cd agri-mitra
+```
+
+---
+
+### 🐍 Step 2 – Create a Virtual Environment
+
+It's recommended to use a virtual environment to keep dependencies isolated.
+
+```bash
+# Create the virtual environment
+python -m venv venv
+
+# Activate it — on Windows:
+venv\Scripts\activate
+
+# Activate it — on macOS/Linux:
+source venv/bin/activate
+```
+
+---
+
+### 📦 Step 3 – Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### 🗄️ Step 4 – Set Up the Database
+
+Agri Mitra uses **SQLite3**, which requires no external setup. Just run the following command to initialize the database and create all required tables:
+
+```bash
+python setup_db.py
+```
+
+This will generate a `agrimitra.db` file in your project directory automatically.
+
+---
+
+### 🔑 Step 5 – Configure Environment Variables
+
+Create a `.env` file in the root of the project and add your API keys:
+
+```bash
+cp .env.example .env
+```
+
+Then open `.env` and fill in your values:
+
+```env
+FLASK_APP=app.py
+FLASK_ENV=development
+SECRET_KEY=your_secret_key_here
+WEATHER_API_KEY=your_openweather_api_key
+MARKET_API_KEY=your_market_data_api_key
+```
+
+> 💡 You can get a free Weather API key from [OpenWeatherMap](https://openweathermap.org/api).
+
+---
+
+### ▶️ Step 6 – Run the Application
+
+```bash
+flask run
+```
+
+The app will start on **http://127.0.0.1:5000** by default. Open this URL in your browser to access Agri Mitra.
+
+---
+
+### 🤖 Step 7 – Run the AI Models (Optional)
+
+To test the crop prediction and disease detection models independently:
+
+```bash
+# Run crop prediction model
+python models/crop_prediction.py
+
+# Run disease detection model
+python models/disease_detection.py
+```
+
+---
+
+### 🧪 Running Tests
+
+```bash
+pytest tests/
+```
+
+---
+
+### 📁 Project Structure
+
+```
+agri-mitra/
+│
+├── app.py                  # Main Flask application entry point
+├── setup_db.py             # Database initialization script
+├── requirements.txt        # Python dependencies
+├── .env.example            # Environment variable template
+│
+├── models/                 # AI/ML model scripts
+│   ├── crop_prediction.py
+│   └── disease_detection.py
+│
+├── static/                 # CSS, JS, images
+├── templates/              # HTML templates (Jinja2)
+├── routes/                 # Flask route blueprints
+├── database/               # SQLite3 DB and schema files
+└── tests/                  # Unit and integration tests
+```
+
+---
+
+
+**Port already in use?**
+```bash
+flask run --port 5001
+```
+
+**Module not found errors?**
+Make sure your virtual environment is activated and dependencies are installed:
+```bash
+source venv/bin/activate   # or venv\Scripts\activate on Windows
+pip install -r requirements.txt
+```
+
+**Database errors?**
+Delete the existing `.db` file and re-run setup:
+```bash
+rm agrimitra.db
+python setup_db.py
+```
 
 ---
 
@@ -137,7 +307,7 @@ Farmer Input → AI Processing (ML Models + APIs) → Personalized Recommendatio
 | Milind Panda | 24CSE097 | 4th Sem, CSE |
 | Jashobanta Sasmal | 24CSE070 | 4th Sem, CSE |
 
- Built for **HackNovation 2.0** — R&D Cell, GIET University, Gunupur
+> Built for **HackNovation 2.0** — R&D Cell, GIET University, Gunupur
 
 
 
